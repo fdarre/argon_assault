@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  xRange: 5
-  yMin: -5
-  yMax: 5
+  xRange: 5.8
+  yMin: -3.3
+  yMax: 3.3
 --- !u!4 &934503801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
