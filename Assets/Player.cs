@@ -36,13 +36,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //doit etre géré avec editor / edit / project settings / input manager
-
-        //if the gamepad joystick is centered there is no throw.
-        //if it is 100% the right throw of 1 if 100% to the left could be -1
-        //quand on push une touche du clavier le throw va de 0 à 1 ou -1 mais pas instantanement
-        //selon le settings de gravity et de sensitivity
-        // avec une manette c'est en fonction du pourcentage par rapport au déplacement maximal
         float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
         float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
@@ -63,6 +56,5 @@ public class Player : MonoBehaviour
             clampedYPos,
             transform.localPosition.z
         );
-
     }
 }
