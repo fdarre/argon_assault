@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.83
+      value: 7.63
       objectReference: {fileID: 0}
     - target: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
         type: 3}
@@ -221,6 +221,28 @@ Transform:
   m_Father: {fileID: 1241522429}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &910326057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7889289834934397864, guid: 8f6dbddc7d0e542fabef665f2db74350,
+    type: 3}
+  m_PrefabInstance: {fileID: 211077263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &910326060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910326057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e518d8fdf6b14affbd0a2ebd158b8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  xRange: 5
+  yMin: -5
+  yMax: 5
 --- !u!4 &934503801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
@@ -640,8 +662,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596619399}
-  m_LocalRotation: {x: 0.20693198, y: 0.7917063, z: -0.37951276, w: 0.43168318}
-  m_LocalPosition: {x: -6.196615, y: 9.175865, z: 8.830927}
+  m_LocalRotation: {x: 0.11231755, y: 0.62568283, z: -0.09168454, w: 0.76648533}
+  m_LocalPosition: {x: -6.833762, y: 1.1916343, z: -1.6332216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 934503801}
@@ -662,7 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circuitObject: {fileID: 1241522428}
   circuit: {fileID: 1241522428}
-  routeSpeed: 50
+  routeSpeed: 80
   lookAheadDistance: 100
   varyingSpeed: 0
   initialSpeed: 0
@@ -748,8 +770,8 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 70.3
-  m_SplatMapDistance: 700
+  m_HeightmapPixelError: 40
+  m_SplatMapDistance: 2000
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 0
   m_DrawHeightmap: 1
