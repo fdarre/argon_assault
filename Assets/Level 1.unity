@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.63
+      value: 9.58
       objectReference: {fileID: 0}
     - target: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
         type: 3}
@@ -239,10 +239,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e518d8fdf6b14affbd0a2ebd158b8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  xRange: 5.8
-  yMin: -3.3
-  yMax: 3.3
+  speed: 5
+  xRange: 5
+  yMin: -5
+  yMax: 5
+  positionPitchFactor: -3
+  positionYawFactor: 4
+  controlPitchFactor: -20
+  controlRollFactor: -25
 --- !u!4 &934503801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7886325433825077982, guid: 8f6dbddc7d0e542fabef665f2db74350,
@@ -637,7 +641,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45.2
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

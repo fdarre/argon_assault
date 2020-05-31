@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     // Ship speed in meters per sec
     [Tooltip("In ms^-1")]
     [SerializeField]
-    float speed = 5f;
+    float speed = 18f;
 
     // Range of x movement in meters
     [Tooltip("In m")]
@@ -19,19 +19,25 @@ public class Player : MonoBehaviour
     // Minimum position from ship position in y
     [Tooltip("In m")]
     [SerializeField]
-    float yMin = -5f;
+    float yMin = -3.5f;
 
 
     // Maximum position from ship position in y
     [Tooltip("In m")]
     [SerializeField]
-    float yMax = 5f;
+    float yMax = 3.5f;
 
     [SerializeField]
-    float positionPitchFactor = -5f;
+    float positionPitchFactor = -3f;
 
     [SerializeField]
-    float controlPitchFactor = -30f;
+    float positionYawFactor = 4f;
+
+    [SerializeField]
+    float controlPitchFactor = -20f;
+
+    [SerializeField]
+    float controlRollFactor = -25f;
 
     float xThrow, yThrow;
 
@@ -52,10 +58,11 @@ public class Player : MonoBehaviour
     {
         float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
         float pitchDueToControlThrow = yThrow * controlPitchFactor;
-        float pitch = pitchDueToPosition + pitchDueToControlThrow;
 
-        float yaw = 0f;
-        float roll = 0f;
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xThrow * controlRollFactor;
+
         transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
     }
 
