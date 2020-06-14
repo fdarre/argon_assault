@@ -70,7 +70,6 @@ public class PlayerController : MonoBehaviour
     //called by string reference
     private void OnPlayerDeath()
     {
-        print("controls frozen");
         isControlEnabled = false;
     }
 
