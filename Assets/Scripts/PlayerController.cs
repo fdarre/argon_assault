@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
+
     // Ship speed in meters per sec
     [Tooltip("In ms^-1")]
     [SerializeField]
-    float speed = 18f;
+    float controlSpeed = 18f;
 
     // Range of x movement in meters
     [Tooltip("In m")]
@@ -27,11 +29,16 @@ public class Player : MonoBehaviour
     [SerializeField]
     float yMax = 3.5f;
 
+    [Header("Screen-Position Based")]
+
     [SerializeField]
     float positionPitchFactor = -3f;
 
     [SerializeField]
     float positionYawFactor = 4f;
+
+
+    [Header("Control Throw Based")]
 
     [SerializeField]
     float controlPitchFactor = -20f;
@@ -40,6 +47,8 @@ public class Player : MonoBehaviour
     float controlRollFactor = -25f;
 
     float xThrow, yThrow;
+    bool isControlEnabled = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +59,34 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if (isControlEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
+      
+    }
+
+    //called by string reference
+    private void OnPlayerDeath()
+    {
+        print("controls frozen");
+        isControlEnabled = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("player collided with something");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Enemy":
+                print("hit enemy");
+                break;
+        }
     }
 
     private void ProcessRotation()
@@ -72,8 +107,8 @@ public class Player : MonoBehaviour
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
 
-        float xOffset = speed * xThrow * Time.deltaTime;
-        float yOffset = speed * yThrow * Time.deltaTime;
+        float xOffset = controlSpeed * xThrow * Time.deltaTime;
+        float yOffset = controlSpeed * yThrow * Time.deltaTime;
 
 
         float rawXPos = transform.localPosition.x + xOffset;
